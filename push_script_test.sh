@@ -1,3 +1,4 @@
+git add --all
 Echo "Enter a commit"
 read commit
 git commit -m "$commit"

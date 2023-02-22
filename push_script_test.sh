@@ -1,6 +1,6 @@
 Echo "Enter a commit"
 read commit
-git commit $commit
+git commit -m "$commit"
 for remo in $(git remote)
 do
 git push --all $remo

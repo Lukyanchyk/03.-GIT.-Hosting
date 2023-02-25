@@ -14,12 +14,12 @@ jobs:
         format: 'csv'
     - run: |
         mapfile -d ',' -t added_modified_files < <(printf '%s,' '${{ steps.files.outputs.added_modified }}')
-        Total_number_of_tabs=0
+        Total_number_of_tabs < 0
         for added_modified_file in "${added_modified_files[@]}"; do
         echo "File ${added_modified_files} has $(grep -o $'t' ${added_modified_file} | wc -l)" > test_tab.log 2>&1 
-        $(Total_number_of_tabs)=$(Total_number_of_tabs)+$(grep -o $"t" ${added_modified_file} | wc -l)
+        ${Total_number_of_tabs}=${Total_number_of_tabs}+$(grep -o $"t" ${added_modified_file} | wc -l)
         done
-        echo "Total number of tabs = $(Total_number_of_tabs)" >> test_tab.log
+        echo "Total number of tabs = ${Total_number_of_tabs}" >> test_tab.log
     - name: Upload artifact
       uses: actions/upload-artifact@v3
       with:

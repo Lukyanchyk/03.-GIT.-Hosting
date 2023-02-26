@@ -19,9 +19,7 @@ jobs:
         #Total_number_of_tabs < 0
         for added_modified_file in "${added_modified_files[@]}"; do
           echo "File ${added_modified_files} has $(grep -o $'t' ${added_modified_file} | wc -l) tabs">>test_tab.log 
-#${Total_number_of_tabs}=${Total_number_of_tabs}+$(grep -o $"t" ${added_modified_file} | wc -l)
         done
-#echo "Total number of tabs = ${Total_number_of_tabs}" >> test_tab.log
     - name: Upload artifact
       uses: actions/upload-artifact@v3
       with:

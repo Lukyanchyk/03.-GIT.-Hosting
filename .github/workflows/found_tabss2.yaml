@@ -11,9 +11,9 @@ jobs:
     - id: files
       uses: jitterbit/get-changed-files@v1
     - run: |
-      for changed_file in ${{ steps.files.outputs.all }}; do
-      echo "File ${changed_file} has $(grep -o $"\t" ${changed_file} | wc -l) tab" >> test_tab.log 2>&1
-      done  
+        for changed_file in ${{ steps.files.outputs.all }}; do
+        echo "File ${changed_file} has $(grep -o $"\t" ${changed_file} | wc -l) tab" >> test_tab.log 2>&1
+        done  
     #- id: files
      # uses: jitterbit/get-changed-files@v1
       #with:

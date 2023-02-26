@@ -19,7 +19,7 @@ jobs:
         Tabs=${Tabs}+$(grep -o $'\t' ${added_modified_file} | wc -l)
         echo "File ${added_modified_file} has $(grep -o $'\t' ${added_modified_file} | wc -l)" >> test_tab.log 2>&1
         done
-        Echo "Total tabs = ${Tabs}" >> test_tab.log
+        echo "Total tabs = ${Tabs}" >> test_tab.log
     - name: Upload artifact
       uses: actions/upload-artifact@v3
       with:

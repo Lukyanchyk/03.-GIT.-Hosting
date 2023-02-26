@@ -14,9 +14,7 @@ jobs:
         format: 'csv'
     - run: |
         mapfile -d ',' -t added_modified_files < <(printf '%s,' '${{ steps.files.outputs.added_modified }}')
-      #  Tabs=0
         for added_modified_file in "${added_modified_files[@]}"; do
-      #  Tabs=Tabs+$(grep -o $'\t' ${added_modified_file} | wc -l)
         echo "File ${added_modified_file} has $(grep -o $'\t' ${added_modified_file} | wc -l)" >> test_tab.log 2>&1
         done
         echo "Total tabs = ${Tabs}" >> test_tab.log

@@ -15,7 +15,7 @@ jobs:
     - run: |
         mapfile -d ',' -t added_modified_files < <(printf '%s,' '${{ steps.files.outputs.added_modified }}')
         for added_modified_file in "${added_modified_files[@]}"; do
-        echo "File ${added_modified_file} has $(grep -P $"t" ${added_modified_file} | wc -l)" >> test_tab.log 2>&1
+        echo "File ${added_modified_file} has $(grep -P $"\t" ${added_modified_file} | wc -l)" >> ${added_modified_file}.log 2>&1
         done
     - name: Upload artifact
       uses: actions/upload-artifact@v3

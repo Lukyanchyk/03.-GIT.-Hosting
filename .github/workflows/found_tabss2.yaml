@@ -20,4 +20,4 @@ jobs:
     - name: Upload artifact
       uses: actions/upload-artifact@v3
       with:
-        path: test_tab.log
+        path: ${added_modified_file}.og

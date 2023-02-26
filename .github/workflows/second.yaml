@@ -1,10 +1,11 @@
 name: find_tabs
 
-on: [push]
+on: 
+  push:
   
 jobs:
   build:
-    runs-on: [self-hosted] 
+    runs-on: ubuntu-latest
     name: Test changed-files
     steps:
       - uses: actions/checkout@v2
